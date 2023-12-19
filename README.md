@@ -4,28 +4,28 @@ This is a new [**React Native**](https://reactnative.dev) project, bootstrapped 
 
 I have successfully developed a cutting-edge fintech open-source application using React Native, incorporating a meticulously designed architecture. The key features and technologies integrated into the application include:
 
-#Redux Toolkit:
+# Redux Toolkit:
 Leveraging the power of state management through Redux Toolkit for efficient data handling and seamless updates.
 
-#Redux-Persist:
+# Redux-Persist:
 Ensuring persistent state storage for enhanced user experience, allowing seamless data retrieval even after app closures.
 
-#Bottom Navigation:
+# Bottom Navigation:
 Implementing an intuitive and user-friendly navigation system, enhancing the overall accessibility and flow of the application.
 
-#Splash Screen:
+# Splash Screen:
 Incorporating a visually appealing splash screen to provide users with a smooth and engaging onboarding experience.
 
-#Dark Mode Feature:
+# Dark Mode Feature:
 Offering users a personalized experience with a Dark Mode feature that seamlessly adapts to both user preferences and system preferences, enhancing usability in various settings.
 
-#Async-storage:
+# Async-storage:
 Utilizing async-storage for efficient and asynchronous data storage, contributing to faster app performance and responsiveness.
 
-#Structured Components:
+# Structured Components:
 Designing a robust component architecture that enhances the overall maintainability and scalability of the codebase.
 
-#Clean and Minimal Design:
+# Clean and Minimal Design:
 Prioritizing user experience with a clean and minimalistic design approach, ensuring that the application is not only visually appealing but also easy to navigate.
 
 This comprehensive set of features reflects a commitment to best practices in app development, resulting in a sophisticated fintech application that excels in both functionality and design."
