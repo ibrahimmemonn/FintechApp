@@ -1,6 +1,6 @@
 import React from 'react';
-import Login from '../screens/Login';
 import {createStackNavigator} from '@react-navigation/stack';
+import BottomNavigationWrapper from './BottomNavigationWrapper';
 
 const Stack = createStackNavigator();
 
@@ -10,7 +10,10 @@ const AppNavigator = () => {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="Login" component={Login} />
+      <Stack.Screen
+        name="BottomNavigation"
+        component={BottomNavigationWrapper}
+      />
     </Stack.Navigator>
   );
 };

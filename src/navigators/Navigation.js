@@ -4,7 +4,7 @@ import {Appearance} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {getThemeObject} from '../theme/Theme';
-import Login from '../screens/Login';
+import Login from '../screens/Home';
 import {useSelector} from 'react-redux';
 import SplashScreen from '../screens/splash/SplashScreen';
 import RootStackNavigator from './RootStackNavigator';
