@@ -5,12 +5,16 @@ import Home from '../screens/Home';
 import Dashboard from '../assets/svg/Dashboard';
 import CardSvg from '../assets/svg/CardSvg';
 import Cards from '../screens/cart/Cards';
+import Profile from '../screens/profile/Profile';
+import ProfileSvg from '../assets/svg/ProfileSvg';
 
 const Tab = createBottomTabNavigator();
 
 const HomeIcon = ({focused}) => <Dashboard focused={focused} />;
 
 const CardIcon = ({focused}) => <CardSvg focused={focused} />;
+
+const ProfileIcon = ({focused}) => <ProfileSvg focused={focused} />;
 
 const BottomNavigation = () => {
   const {colors} = useTheme();
@@ -40,6 +44,13 @@ const BottomNavigation = () => {
         component={Cards}
         options={{
           tabBarIcon: CardIcon,
+        }}
+      />
+      <Tab.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ProfileIcon,
         }}
       />
     </Tab.Navigator>

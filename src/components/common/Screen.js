@@ -15,6 +15,7 @@ const Screen = ({title, children}) => {
         <View
           style={{
             flexDirection: 'row',
+            paddingTop: 10,
             paddingHorizontal: 20,
             alignItems: 'center',
           }}>
@@ -24,7 +25,6 @@ const Screen = ({title, children}) => {
             style={{
               fontWeight: 'bold',
               color: colors.blacknWhite,
-              fontSize: 30,
               textAlign: 'center',
               flex: 1,
             }}>

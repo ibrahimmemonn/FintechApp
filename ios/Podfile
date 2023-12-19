@@ -31,6 +31,7 @@ target 'Fitech_App' do
   use_react_native!(
     :path => config[:reactNativePath],
     # Enables Flipper.
+    :hermes_enabled => false,
     #
     # Note that if you have use_frameworks! enabled, Flipper will not work and
     # you should disable the next line.
@@ -38,6 +39,7 @@ target 'Fitech_App' do
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
+  pod 'react-native-restart', :path => '../node_modules/react-native-restart'
 
   target 'Fitech_AppTests' do
     inherit! :complete

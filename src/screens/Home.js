@@ -1,4 +1,4 @@
-import {useTheme} from '@react-navigation/native';
+import {useNavigation, useTheme} from '@react-navigation/native';
 import React from 'react';
 import {
   Image,
@@ -10,7 +10,6 @@ import {
 } from 'react-native';
 import Text from '../components/common/Text';
 import BurgerMenu from '../assets/svg/BurgerMenu';
-import Inbox from '../assets/svg/Inbox';
 import AddCircle from '../assets/svg/AddCircle';
 import {Balance, Me, NikeLogo, Payment, StarbucksLogo} from '../assets';
 import DarkMode from '../assets/svg/DarkMode';
@@ -22,53 +21,70 @@ import RNRestart from 'react-native-restart';
 const Home = () => {
   const styles = useStyles();
   const {colors} = useTheme();
+  const navigation = useNavigation();
   const dispatch = useDispatch();
   const dark = useSelector(state => state.app.dark);
 
   const toggle = value => {
     dispatch(toggleTheme(value));
+    RNRestart.Restart();
+  };
+
+  const Header = () => {
+    return (
+      <View style={styles.header}>
+        <BurgerMenu />
+        <TouchableOpacity
+          onPress={() => navigation.navigate('Profile')}
+          style={{
+            backgroundColor: colors.blacknWhite,
+            borderRadius: 100,
+          }}>
+          <Image
+            source={Me}
+            style={{
+              top: 1,
+              width: 70,
+              height: 70,
+            }}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => toggle(dark == '2' ? '1' : '2')}>
+          {dark == '2' ? <LightMode /> : <DarkMode />}
+        </TouchableOpacity>
+      </View>
+    );
+  };
+
+  const SchedulePayment = () => {
+    return (
+      <View style={styles.paymentView}>
+        <TouchableOpacity>
+          <AddCircle />
+        </TouchableOpacity>
+        <Text title style={styles.paymentText}>
+          Schedule a{'\n'}new payment
+        </Text>
+        <Image
+          source={Payment}
+          style={styles.paymentImage}
+          resizeMode="contain"
+        />
+      </View>
+    );
   };
 
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{paddingHorizontal: 20}}>
-        <View style={styles.header}>
-          <BurgerMenu />
-          <View style={{backgroundColor: colors.blacknWhite, borderRadius: 20}}>
-            <Image
-              source={Me}
-              style={{
-                top: 1,
-                width: 70,
-                height: 70,
-              }}
-            />
-          </View>
-          <TouchableOpacity onPress={() => toggle(dark == '2' ? '1' : '2')}>
-            {dark == '2' ? <LightMode /> : <DarkMode />}
-          </TouchableOpacity>
-        </View>
+        <Header />
         <View style={{zIndex: 10}}>
           <Text title style={styles.title}>
-            Hey Ibrahim!
+            Hey Ibrahim! 🚀
           </Text>
           <Text small style={styles.subTitle}>
-            Welcome back, your account’s{'\n'}doing just fine ✌️
+            Welcome back, your account’s{'\n'}doing just fine.
           </Text>
-
-          <View style={styles.paymentView}>
-            <TouchableOpacity>
-              <AddCircle />
-            </TouchableOpacity>
-            <Text title style={styles.paymentText}>
-              Schedule a{'\n'}new payment
-            </Text>
-            <Image
-              source={Payment}
-              style={styles.paymentImage}
-              resizeMode="contain"
-            />
-          </View>
           <View style={styles.balanceView}>
             <View style={{top: -20, marginLeft: 20}}>
               <Image
@@ -81,8 +97,8 @@ const Home = () => {
               />
             </View>
             <View style={styles.balanceSection}>
-              <Text content style={styles.balanceText}>
-                Balance
+              <Text small style={styles.balanceText}>
+                Current Balance
               </Text>
               <Text title style={styles.balanceValue}>
                 € 2.380
@@ -91,6 +107,20 @@ const Home = () => {
           </View>
         </View>
         <View style={styles.balanceList}>
+          <View
+            style={{
+              flexDirection: 'row',
+              justifyContent: 'space-between',
+            }}>
+            <Text content>Transactions</Text>
+            <TouchableOpacity>
+              <Text
+                content
+                style={{fontWeight: 'bold', color: colors.blacknWhite}}>
+                View All
+              </Text>
+            </TouchableOpacity>
+          </View>
           <View style={styles.listView}>
             <Image
               source={NikeLogo}
@@ -121,6 +151,7 @@ const Home = () => {
             </View>
           </View>
         </View>
+        <SchedulePayment />
       </ScrollView>
     </SafeAreaView>
   );
@@ -185,11 +216,10 @@ const useStyles = () => {
       fontWeight: 'bold',
     },
     balanceList: {
+      marginTop: 20,
       backgroundColor: colors.cardSecondaryBg,
       padding: 20,
-      top: -20,
-      borderBottomLeftRadius: 20,
-      borderBottomRightRadius: 20,
+      borderRadius: 20,
     },
     balanceTextRow: {
       flexDirection: 'row',
