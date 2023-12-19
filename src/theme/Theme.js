@@ -21,10 +21,10 @@ const darkTheme = {
   primaryText: '#FFFFFF',
   secondaryText: '#BFBFBF',
   blacknWhite: '#FFFFFF',
-  background: '#202020',
+  background: '#111',
   icon: '#778392',
   white: '#FFFFFF',
-  cardBackground: '#3D3D3D',
+  cardBackground: '#2C2C2C',
   primaryBorder: '#454647',
 };
 

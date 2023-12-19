@@ -16,15 +16,14 @@ const Cards = () => {
           style={{height: 350, width: 350, alignSelf: 'center', marginTop: 20}}
           resizeMode="contain"
         />
-        <View
-          style={{
-            backgroundColor: colors.cardBackground,
-            borderWidth: 1,
-            borderColor: colors.primaryBorder,
-            padding: 25,
-            borderRadius: 20,
-          }}>
-          <Text>View card details</Text>
+        <View style={styles.cardDetail}>
+          <Text content>View card details</Text>
+        </View>
+        <View style={styles.cardDetail}>
+          <Text content>Pin code</Text>
+        </View>
+        <View style={styles.cardDetail}>
+          <Text content>Deactivate card</Text>
         </View>
       </View>
     </Screen>
@@ -34,9 +33,13 @@ const Cards = () => {
 const useStyles = () => {
   const {colors} = useTheme();
   return StyleSheet.create({
-    fill: {
-      flex: 1,
-      backgroundColor: colors.background,
+    cardDetail: {
+      backgroundColor: colors.cardBackground,
+      borderWidth: 1,
+      borderColor: colors.primaryBorder,
+      padding: 25,
+      borderRadius: 20,
+      marginVertical: 10,
     },
   });
 };

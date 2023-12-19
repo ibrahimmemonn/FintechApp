@@ -13,10 +13,21 @@ import BurgerMenu from '../assets/svg/BurgerMenu';
 import Inbox from '../assets/svg/Inbox';
 import AddCircle from '../assets/svg/AddCircle';
 import {Balance, Me, NikeLogo, Payment, StarbucksLogo} from '../assets';
+import DarkMode from '../assets/svg/DarkMode';
+import LightMode from '../assets/svg/LightMode';
+import {useDispatch, useSelector} from 'react-redux';
+import {toggleTheme} from '../store/appReducer';
+import RNRestart from 'react-native-restart';
 
 const Home = () => {
   const styles = useStyles();
   const {colors} = useTheme();
+  const dispatch = useDispatch();
+  const dark = useSelector(state => state.app.dark);
+
+  const toggle = value => {
+    dispatch(toggleTheme(value));
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -33,7 +44,9 @@ const Home = () => {
               }}
             />
           </View>
-          <Inbox />
+          <TouchableOpacity onPress={() => toggle(dark == '2' ? '1' : '2')}>
+            {dark == '2' ? <LightMode /> : <DarkMode />}
+          </TouchableOpacity>
         </View>
         <View style={{zIndex: 10}}>
           <Text title style={styles.title}>
@@ -67,7 +80,6 @@ const Home = () => {
                 resizeMode="contain"
               />
             </View>
-
             <View style={styles.balanceSection}>
               <Text content style={styles.balanceText}>
                 Balance
@@ -89,8 +101,7 @@ const Home = () => {
               resizeMode="contain"
             />
             <View style={styles.balanceTextRow}>
-              <Text>Nike Footwear</Text>
-
+              <Text content>Nike Footwear</Text>
               <Text content>Rs. 4,98</Text>
             </View>
           </View>
@@ -104,7 +115,7 @@ const Home = () => {
               resizeMode="contain"
             />
             <View style={styles.balanceTextRow}>
-              <Text>Starbucks Nørreport st.</Text>
+              <Text content>Starbucks Nørreport st.</Text>
 
               <Text content>Rs. 4,98</Text>
             </View>
@@ -144,7 +155,6 @@ const useStyles = () => {
       alignItems: 'center',
     },
     paymentText: {
-      color: colors.text,
       fontWeight: '600',
       marginLeft: 15,
     },
@@ -170,7 +180,6 @@ const useStyles = () => {
       color: colors.text,
     },
     balanceValue: {
-      color: colors.text,
       fontSize: 30,
       letterSpacing: 2,
       fontWeight: 'bold',
