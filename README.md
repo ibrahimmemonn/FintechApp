@@ -1,6 +1,6 @@
-|              Solarized dark               |             Solarized Ocean              |
-| :---------------------------------------: | :--------------------------------------: |
-| ![](./src//assets/images/Screenshot1.png) | ![](./src/assets/images/Screenshot1.png) |
+|             Solarized dark              |             Solarized Ocean              |
+| :-------------------------------------: | :--------------------------------------: |
+| ![](/src/assets/images/Screenshot1.png) | ![](./src/assets/images/Screenshot1.png) |
 
 # Getting Started 🚀
 
