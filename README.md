@@ -1,6 +1,6 @@
-|             Solarized dark              |             Solarized Ocean              |
-| :-------------------------------------: | :--------------------------------------: |
-| ![](/src/assets/images/Screenshot1.png) | ![](./src/assets/images/Screenshot1.png) |
+|                                        Light Mode                                         |                                         Dark Mode                                         |
+| :---------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------: |
+| ![](https://res.cloudinary.com/dpugxh9rw/image/upload/v1703047447/Screenshot1_sfgmch.png) | ![](https://res.cloudinary.com/dpugxh9rw/image/upload/v1703047447/Screenshot2_ddljz9.png) |
 
 # Getting Started 🚀
 
