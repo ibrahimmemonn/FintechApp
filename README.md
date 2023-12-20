@@ -1,4 +1,6 @@
-![alt-text-1](/src/assets/images/Screenshot1.png 'title-1') ![alt-text-2](/src/assets/images/Screenshot1.png 'title-2')
+|              Solarized dark               |             Solarized Ocean              |
+| :---------------------------------------: | :--------------------------------------: |
+| ![](./src//assets/images/Screenshot1.png) | ![](./src/assets/images/Screenshot1.png) |
 
 # Getting Started 🚀
 
